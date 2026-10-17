@@ -6,6 +6,7 @@
 **NIM:** 24/541475/SV/24912  
 **Program Studi:** Sarjana Terapan Teknologi Rekayasa Perangkat Lunak (TRPL)  
 **Departemen:** Teknik Elektro dan Informatika, Sekolah Vokasi, Universitas Gadjah Mada  
+**Dosen Pengampu:** Galih Malela Damaraji  
 **Repositori GitHub:** [https://github.com/xirenaaa/541475_KEPL-UTS](https://github.com/xirenaaa/541475_KEPL-UTS)  
 
 ---
