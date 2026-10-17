@@ -3,9 +3,9 @@
 
 **Tema Sistem:** Perpustakaan Digital (Digital Library Management System)  
 **Mahasiswa:** Falah Auladi  
-**NIM:** 23/541475/SV/25139  
+**NIM:** 24/541475/SV/24912  
 **Program Studi:** Sarjana Terapan Teknologi Rekayasa Perangkat Lunak (TRPL)  
-**Departemen:** Teknik Elektro dan Teknologi Informasi, Fakultas Teknik, Universitas Gadjah Mada  
+**Departemen:** Teknik Elektro dan Informatika, Sekolah Vokasi, Universitas Gadjah Mada  
 **Repositori GitHub:** [https://github.com/xirenaaa/541475_KEPL-UTS](https://github.com/xirenaaa/541475_KEPL-UTS)  
 
 ---
