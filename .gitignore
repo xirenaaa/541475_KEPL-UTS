@@ -1,0 +1,24 @@
+# Environment files (credentials must not be committed)
+.env
+
+# Laporan & Screenshots (disimpan lokal untuk submit Google Classroom, tidak diunggah ke git)
+LAPORAN_UTS_KEPL.*
+generate_laporan_pdf.js
+take_screenshots.js
+screenshots/
+
+# AI Agent files
+CLAUDE.md
+AGENTS.md
+.claude/
+.agents/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor
+.idea/
+.vscode/
+*.swp
+*.swo
