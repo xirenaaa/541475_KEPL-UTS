@@ -7,6 +7,7 @@ generate_laporan_pdf.js
 take_screenshots.js
 generate_screenshots.js
 build_laporan_p10.py
+build_laporan_p10_humanized.py
 screenshots/
 report_assets/
 report_spec.json
