@@ -6,6 +6,10 @@ LAPORAN_UTS_KEPL.*
 generate_laporan_pdf.js
 take_screenshots.js
 screenshots/
+report_assets/
+report_spec.json
+P10_*.docx
+P10_*.pdf
 
 # AI Agent files
 CLAUDE.md
