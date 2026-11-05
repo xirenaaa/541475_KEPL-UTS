@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class BookController extends Controller
 {
@@ -34,6 +35,15 @@ class BookController extends Controller
         ]);
 
         $book = Book::create($validated);
+
+        Log::info('Book created', [
+            'action'  => 'book.store',
+            'user_id' => $request->user()?->id,
+            'user'    => $request->user()?->email,
+            'book_id' => $book->id,
+            'title'   => $book->title,
+            'isbn'    => $book->isbn,
+        ]);
 
         return response()->json([
             'message' => 'Book created successfully',
@@ -67,6 +77,14 @@ class BookController extends Controller
 
         $book->update($validated);
 
+        Log::info('Book updated', [
+            'action'  => 'book.update',
+            'user_id' => $request->user()?->id,
+            'user'    => $request->user()?->email,
+            'book_id' => $book->id,
+            'changes' => array_keys($validated),
+        ]);
+
         return response()->json([
             'message' => 'Book updated successfully',
             'data'    => $book,
@@ -76,9 +94,19 @@ class BookController extends Controller
     /**
      * Remove the specified book from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(Request $request, Book $book)
     {
+        $bookId    = $book->id;
+        $bookTitle = $book->title;
         $book->delete();
+
+        Log::warning('Book deleted', [
+            'action'  => 'book.destroy',
+            'user_id' => $request->user()?->id,
+            'user'    => $request->user()?->email,
+            'book_id' => $bookId,
+            'title'   => $bookTitle,
+        ]);
 
         return response()->json([
             'message' => 'Book deleted successfully',

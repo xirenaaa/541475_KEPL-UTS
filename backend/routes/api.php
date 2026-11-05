@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\HealthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+// Health check (no auth, used by Docker healthcheck)
+Route::get('/health', HealthController::class);
 
 // Public routes (no auth required)
 Route::post('/register', [AuthController::class, 'register']);

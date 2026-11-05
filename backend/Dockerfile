@@ -11,6 +11,9 @@ RUN install-php-extensions \
     pcntl \
     zip
 
+# Ensure curl is available for Docker healthcheck
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+
 # Install Composer
 COPY --from=composer:2.8 /usr/bin/composer /usr/bin/composer
 

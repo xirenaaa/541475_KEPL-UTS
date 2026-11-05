@@ -20,6 +20,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   # Backend Laravel service (FrankenPHP)
   backend:
@@ -44,6 +49,8 @@ services:
       SESSION_DOMAIN: localhost
       FRONTEND_URL: http://localhost:8080
       LOG_CHANNEL: stderr
+      LOG_LEVEL: debug
+      CACHE_STORE: database
     ports:
       - "8000:8000"
     depends_on:
@@ -51,6 +58,17 @@ services:
         condition: service_healthy
     networks:
       - perpustakaan-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
     command: >
       sh -c "php artisan migrate --force &&
              php artisan db:seed --force &&
@@ -71,6 +89,11 @@ services:
       - backend
     networks:
       - perpustakaan-net
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 networks:
   perpustakaan-net:
